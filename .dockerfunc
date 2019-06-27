@@ -1,0 +1,34 @@
+#!/bin/bash
+
+DOCKER_REPO_PREFIX=a6kme
+
+del_stopped(){
+	local name=$1
+	local state
+	state=$(docker inspect --format "{{.State.Running}}" "$name" 2>/dev/null)
+
+	if [[ "$state" == "false" ]]; then
+		docker rm "$name"
+	fi
+}
+
+jmeter() {
+    del_stopped jmeter
+
+    docker run -it \
+        --name jmeter \
+        -v ${PWD}:${PWD} \
+        -w ${PWD} \
+        -e DISPLAY=$(ipconfig getifaddr en0):0 \
+        $DOCKER_REPO_PREFIX/jmeter
+}
+
+jupyter() {
+    del_stopped jupyter
+
+    docker run -it \
+        --name jupyter \
+        -v ${PWD}:${PWD} \
+        -w ${PWD} \
+        $DOCKER_REPO_PREFIX/jupyter
+}
