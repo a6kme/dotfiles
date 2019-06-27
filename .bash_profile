@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load .bashrc and other files...
-for file in ~/.{bashrc,dockerfunc}; do
+for file in ~/.{bashrc,dockerfunc,extra}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
