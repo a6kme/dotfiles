@@ -1,0 +1,21 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "window.zoomLevel": 1,
+    "terminal.integrated.inheritEnv": false,
+    "workbench.editor.enablePreview": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "git.autofetch": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "tabnine.experimentalAutoImports": true,
+    "python.createEnvironment.trigger": "off",
+    "terminal.integrated.scrollback": 1000000000,
+    "editor.formatOnSave": true,
+    "isort.check": true
+}
